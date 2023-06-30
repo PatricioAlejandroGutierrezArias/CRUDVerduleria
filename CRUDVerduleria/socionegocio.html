@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="./css/style.css">
+    <title>CRUD Verduleria</title>
+</head>
+<body>
+     <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">Principal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./articulos.html">Articulos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./documentosmk.html">Compras/Ventas </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./socionegocio.html">Clientes/Proveedores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./formapago.html">Forma de Pago</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- fin navbar -->
+
+  <div class="container bg-white my-3 ">
+
+    <div class="row ">
+      <div class="col-sm-8 col-md-4 col-lg-4 col-xl-4">
+        <h4 class="nuevo">Nuevo</h4>
+        <div class="container">
+       <div class="row">
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-success btn-sm col-3" data-bs-toggle="modal" data-bs-target="#agregarsocionegocio">
+  <i class="bi bi-person-plus-fill">
+</button></i>
+
+<!-- Modal -->
+<div class="modal fade" id="agregarsocionegocio" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="agregarsocionegocio" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" id="agregar">
+        <h5 class="modal-title " id="agregarsocionegociotitulo">Agregar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="return validarFormulario()" class="ps-2 pe-4">
+          <div class="mb-3">
+            <label for="txt_rut_socio_negocio" class="form-label">Rut</label>
+            <input type="number" class="form-control campoNumerico" id="txt_rut_socio_negocio" placeholder="Rut sin punto ni digito verificador">
+          </div>
+          <div class="mb-3">
+            <label for="txt_dv_socio_negocio" class="form-label">DV</label>
+            <input type='number' class="form-control campoNumerico" id="txt_dv_socio_negocio" placeholder="Digito Verificiador"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_nombre_socio_negocio" class="form-label">Nombres</label>
+            <input type='text' class="form-control campoTexto" id="txt_nombre_socio_negocio" placeholder="Nombres"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_apepater_socio_negocio" class="form-label">Apellido Paterno</label>
+            <input type='text' class="form-control campoTexto" id="txt_apepater_socio_negocio" placeholder="Apellido Paterno"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_apemater_socio_negocio" class="form-label">Apellido Materno</label>
+            <input type='text' class="form-control campoTexto" id="txt_apemater_socio_negocio" placeholder="Apellido Materno"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_tipo_socio_negocio" class="form-label">Tipo Socio Negocio</label>
+            <input type='text' class="form-control campoTexto" id="txt_tipo_socio_negocio" placeholder="Cliente o Proveedor"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_telefono_socio_negocio" class="form-label">Telefono</label>
+            <input type='number' class="form-control campoNumerico" id="txt_telefono_socio_negocio" placeholder="Telefono 9 digitos"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_direccion_socio_negocio" class="form-label">Direccion</label>
+            <input type='text' class="form-control" id="txt_direccion_socio_negocio" placeholder="Direccion"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_comuna_socio_negocio" class="form-label">Comuna</label>
+            <input type='text' class="form-control campoTexto" id="txt_comuna_socio_negocio" placeholder="Comuna"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_ciudad_socio_negocio" class="form-label">Ciudad</label>
+            <input type='text' class="form-control campoTexto" id="txt_ciudad_socio_negocio" placeholder="Ciudad"></input>
+          </div>
+          <div class="mb-3">
+            <label for="txt_email_socio_negocio" class="form-label">Correo</label>
+            <input type='email' class="form-control" id="txt_email_socio_negocio" placeholder="Correo"></input>
+          </div>
+     
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button onclick="agregarSocioNegocio()" type="button" class="btn btn-success"  data-bs-dismiss="modal">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+           
+
+       </div>
+
+
+        </div>
+      </div>
+
+
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <h4 class="titulo">Socio Negocio</h4>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <!-- <th class="centrado">id Socio Negocio</th> -->
+                <th class="centrado">Rut</th>
+                <th class="centrado">DV</th>
+                <th class="centrado">Nombre</th>
+                <th class="centrado">Apellido Paterno</th>
+                <th class="centrado">Apellido Materno</th>
+                <th class="centrado">Tipo SN</th>
+                <th class="centrado">Telefono</th>
+                <th class="centrado">Direccion</th>
+                <th class="centrado">Comuna</th>
+                <th class="centrado">Ciudad</th>
+                <th class="centrado">Correo Electronico</th>
+                <th class="centrado" colspan="2">Acciones</th>
+                <th class="centrado"></th>
+              </tr>
+            </thead>
+            <tbody class="socionegocio centrado">
+            </tbody>
+          </table>
+        </div>
+
+       
+
+
+            <div class="my-5">
+              <button onclick="socioNegocio()" class="btn btn-success btn-sm my-3"> <i
+                  class="bi bi-download"></button></i>
+              <input type="button" value="Limpiar" class="btn btn-outline-dark btn-sm m-auto"
+                onclick="recarga()">
+            </div>
+
+      </div>
+    </div>
+
+
+
+    <script src="./js/socionegocio.js"></script>
+
+
+
+
+
+</body>
+</html>
